@@ -305,8 +305,13 @@ Jerry: “thank you, Mr. Goose”</p>
 
 	<script>
 	var problemID = "EtP5ysFgY9uPA4uKLYkB";
+	var oldProblemID = "HEoyx1uqzZI7m7gX9nJ0";
 	$(function (){
-		attempt(problemID)
+		if (localStorage.getItem("statSent") === null) {
+            localStorage.setItem('statSent', true);
+			success(oldProblemID);
+			attempt(problemID);
+        }
 	})
 	</script>
     </body>
